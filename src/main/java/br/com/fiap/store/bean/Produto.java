@@ -14,6 +14,8 @@ public class Produto {
 	
 	private int quantidade;
 	
+	private Categoria categoria;
+	
 	public Produto() {
 		super();
 	}
@@ -66,6 +68,16 @@ public class Produto {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	
+	
 	
 	
 }

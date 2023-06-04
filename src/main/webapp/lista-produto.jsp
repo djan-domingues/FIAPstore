@@ -26,6 +26,7 @@
 				<th>Quantidade</th>
 				<th>Valor</th>		
 				<th>Data de Fabricação</th>	
+				<th>Categoria</th>
 				<th></th>	
 			</tr>
 			<c:forEach items="${produtos }" var="p">
@@ -36,6 +37,7 @@
 					<td>
 						<fmt:formatDate value="${p.dataFabricacao.time }" pattern="dd/MM/yyyy"/>
 					</td>
+					<td>${p.categoria.nome}</td>
 					<td>
 						<c:url value="produto" var="link">
 							<c:param name="acao" value="abrir-form-edicao"/>

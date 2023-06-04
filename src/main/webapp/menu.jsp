@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="cadastro-produto.jsp">Cadastro</a>
+        <a class="nav-link" href="produto?acao=abrir-form-cadastro">Cadastro</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="produto?acao=listar">Produtos</a>
