@@ -1,5 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">FIAPStore</a>
+  <a class="navbar-brand" href="home.jsp">FIAPStore</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,9 +14,21 @@
         <a class="nav-link" href="produto?acao=listar">Produtos</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <c:if test="${empty user }">
+	    <span class="navbar-text text-danger" style="margin-right:10px" >
+	        ${erro }
+	  	</span>	
+	    <form class="form-inline my-2 my-lg-0" action="login" method="post">
+	    	  <input class="form-control mr-sm-2" type="text" name="email" placeholder="E-mail">
+	      <input class="form-control mr-sm-2" type="password" name="senha" placeholder="Senha">
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Entrar</button>
+	    </form>
+    </c:if>
+    <c:if test="${not empty user }">
+    		<span class="navbar-text">
+	    		${user }
+	    		<a href="login" class="btn btn-outline-primary my-2 my-sm-0">Sair</a>
+	  	</span>	
+    </c:if>
   </div>
 </nav>
